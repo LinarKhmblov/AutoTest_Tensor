@@ -2,10 +2,7 @@
 
 
 def even_sum(lst):
-    # sum_list = sum(x for i, x in enumerate(lst) if i % 2 == 0)
-    for i, x in lst:
-        if i % 2 == 0 in lst:
-            sum_list = sum(x for i, x in enumerate(lst))
+    sum_list = sum(x for i, x in enumerate(lst) if i % 2 == 0)
     return sum_list
 
 
