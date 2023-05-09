@@ -2,7 +2,7 @@
 # В исходном списке минимум 2 элемента.
 
 def modification(lst):
-    if len(lst) < 2
+    if len(lst) < 2:
         return lst
     else:
         lst[0], lst[-1] = lst[-1], lst[0]
