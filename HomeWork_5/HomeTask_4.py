@@ -14,40 +14,21 @@
 
 
 def scrabble(word):
-    """ В данной функции буквы разделили по отдельным спискам, согласно присуждаемому количеству баллов при встрече в слове.
-    Функция при прохождении по циклу ищет символы в списках, и при нахождении добавляет соответсвующее количество баллов в переменную 'points'.
-
+    """ В данной функции для начала создаем словарь 'points_for_letters, где в качестве ключа указываем количество очков за букву,
+    а в качестве значения список букв. После в переменной 'points' находим символ из загаданного слова в значениях словаря,
+     и присуждаем ему количество баллов согласно ключу, в котором он находится.
     @param word:
     @return:
     """
-    one_point = ['а', 'в', 'е', 'ё', 'и', 'н', 'о', 'р', 'с', 'т']
-    two_points = ['д', 'к', 'л', 'м', 'п', 'у']
-    three_points = ['б', 'г', 'ь', 'я']
-    four_points = ['й', 'ы']
-    five_points = ['ж', 'з', 'х', 'ц', 'ч']
-    eight_points = ['ф', 'ш', 'э', 'ю']
-    ten_points = ['щ']
-    fifteen_points = ['ъ']
-
-    points = 0
-
-    for i in word:
-        if i in one_point:
-            points += 1
-        elif i in two_points:
-            points += 2
-        elif i in three_points:
-            points += 3
-        elif i in four_points:
-            points += 4
-        elif i in five_points:
-            points += 5
-        elif i in eight_points:
-            points += 8
-        elif i in ten_points:
-            points += 10
-        else:
-            points += 15
+    points_for_letters = {1: 'авеёинорст',
+                          2: 'дклмпу',
+                          3: 'бгья',
+                          4: 'йы',
+                          5: 'жзхцч',
+                          8: 'фшэю',
+                          10: 'щ',
+                          15: 'ъ'}
+    points = sum(j for i in word for j, x in points_for_letters.items() if i in x)
 
     return points
 
