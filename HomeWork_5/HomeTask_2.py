@@ -16,12 +16,9 @@ def repeats(our_str):
     new_str = ""
 
     for i in our_str:
-        if i in count:
-            count[i] = count.get(i) + 1
-        else:
-            count[i] = 1
-
+        count[i] = count.get(i, 0) + 1
         new_str += f'{i}_{count[i]}'
+
     return new_str
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
