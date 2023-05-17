@@ -19,14 +19,14 @@
 
 
 def everything_for_your_cat(cats_data):
-    """ В данной функции сначала создаем словарь, куда будем в качестве ключа записываем имя и фамилию хозяина кошки,
-     а в качестве значения добавляем имя и возраст кошки. После на основе созданных ключей находим всех питомцев хозяев,
-     и записываем их в новую переменную 'our_str'.
+    """
+    Объединяет питомцев с хозяевами, построчно выводит список покупателей.
 
-    @param cats_data:
-    @return:
+    @param cats_data: Список (list)
+    @return: Строка (str) Имя, Фамилия покупателя: кличка кота, возраст.
     """
     new_str = {}
+    our_str = ""
 
     for data in cats_data:
         cats_name, age, owner_name, o_surname = data
@@ -35,7 +35,6 @@ def everything_for_your_cat(cats_data):
             new_str[customer] = []
         new_str[customer].append((cats_name, age))
 
-    our_str = ""
 
     for customer, cat in new_str.items():
         owner_name, o_surname = customer
