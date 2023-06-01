@@ -10,14 +10,15 @@
 # Здесь пишем код
 
 def segment(p1, p2):
+    """ находим сумму кортежей """
     try:
-        x1, y1 = p1
-        x2, y2 = p2
+        x1, y1 = p1[0], p1[1]
+        x2, y2 = p2[0], p2[1]
         summ = x1 + y1 + x2 + y2
-        return summ
-
     except Exception as e:
         return str(e)[::-1]
+    else:
+        return summ
 
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

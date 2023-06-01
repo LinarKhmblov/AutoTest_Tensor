@@ -16,8 +16,6 @@
 import unittest  # Не удалять
 
 
-# Здесь пишем код
-
 class Trigon():
     def __init__(self, *args):
         n = len(args)
@@ -31,7 +29,6 @@ class Trigon():
             if i <= 0:
                 raise ValueError('Стороны должны быть положительными')
             sides.append(i)
-
 
         a, b, c = sides
         if a + b <= c or a + c <= b or b + c <= a:
