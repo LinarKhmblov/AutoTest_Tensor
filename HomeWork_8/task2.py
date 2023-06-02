@@ -17,30 +17,23 @@ import unittest  # Не удалять
 
 
 class Trigon():
+    """Проверка соответствия переданных данных сторонам треугольника"""
     def __init__(self, *args):
-        n = len(args)
-        if n != 3:
-            raise IndexError(f'Передано {n} аргументов, а ожидается 3')
+        if len(args) != 3:
+            raise IndexError(f'Передано {len(args)} аргументов, а ожидается 3')
 
-        sides = []
-        for i in args:
-            if type(i) not in (int, float):
-                raise TypeError('Стороны должны быть числами')
-            if i <= 0:
-                raise ValueError('Стороны должны быть положительными')
-            sides.append(i)
+        sides = [side for side in args if isinstance(side, (int, float))]
+        if len(sides) != 3:
+            raise TypeError('Стороны должны быть числами')
+
+        if any(side <= 0 for side in sides):
+            raise ValueError('Стороны должны быть положительными')
 
         a, b, c = sides
         if a + b <= c or a + c <= b or b + c <= a:
             raise Exception("Не треугольник")
 
-        self.sides = sides
-
-
-
-
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
-
 
 class MyTestCase(unittest.TestCase):
 

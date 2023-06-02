@@ -21,15 +21,18 @@ import unittest  # Не удалять
 def treatment_sum(our_tuple):
     """находим сумму чисел кортежа, отлавливаем исключения"""
     try:
-        if len(our_tuple) == 2:
-            return our_tuple[0] + our_tuple[1]
-        elif len(our_tuple) < 2:
-            return 'Недостаточно данных'
-        else:
-            raise Exception('Много данных')
+        tuple_sum = our_tuple[0] + our_tuple[1]
     except TypeError:
         return 'Нельзя сложить эти данные'
+    except:
+         pass
 
+    if len(our_tuple) == 2:
+        return tuple_sum
+    elif len(our_tuple) < 2:
+        return 'Недостаточно данных'
+    else:
+        raise Exception('Много данных')
 
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
