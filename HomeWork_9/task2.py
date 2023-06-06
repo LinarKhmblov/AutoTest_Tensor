@@ -35,9 +35,6 @@ import datetime
 
 # Здесь пишем код
 
-import datetime
-
-
 file_log = 'test_file/log.txt'
 
 def func_log(file_log):
@@ -50,8 +47,6 @@ def func_log(file_log):
             return func(*args, **kwargs)
         return wrapper_func_log
     return decorator_func_log
-
-
 
 @func_log(file_log)
 def func1():
