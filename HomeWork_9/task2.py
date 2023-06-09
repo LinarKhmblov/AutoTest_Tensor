@@ -37,7 +37,8 @@ import datetime
 
 file_log = 'test_file/log.txt'
 
-def func_log(file_log):
+
+def func_log(file_log 'test_file/log.txt'):
     def decorator_func_log(func):
         def wrapper_func_log(*args, **kwargs):
             with open(file_log, mode='a+', encoding='utf-8') as file:
@@ -48,8 +49,18 @@ def func_log(file_log):
         return wrapper_func_log
     return decorator_func_log
 
+
 @func_log(file_log)
 def func1():
      time.sleep(1)
 
+        
+@func_log(file_log='log2.txt')
+def func2():
+     time.sleep(2)
+        
+        
 func1()
+func2()
+func1()
+Func2()
