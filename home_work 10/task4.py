@@ -4,6 +4,7 @@
 
 import pytest
 
+
 def all_division(*arg1):
 
     division = arg1[0]
@@ -11,6 +12,8 @@ def all_division(*arg1):
         division /= i
     return division
 
+
+@pytest.mark.my_fixture
 class TestAllDivision():
 
     @pytest.mark.my_fixture
