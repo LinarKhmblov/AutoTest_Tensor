@@ -3,7 +3,7 @@ import datetime
 import time
 
 
-@pytest.fixture(scope='session', autouse=True)
+@pytest.fixture(scope='class', autouse=True)
 def setup_module(request):
     """Записываем время запуска сессии тестов"""
     start_time = datetime.datetime.now().strftime('%d.%m %H:%M:%S')
