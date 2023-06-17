@@ -24,13 +24,17 @@ try:
     tensor_logo_btn = driver.find_element(By.CSS_SELECTOR, '.sbisru-Contacts__logo-tensor')
     tensor_logo_btn.click()
     driver.switch_to.window(driver.window_handles[1])
-    sleep(5)
-    news_block = driver.find_element(By.CSS_SELECTOR, '.tensor_ru-Index__block4-content')
-    assert news_block.is_displayed()
+    sleep(2)
+    block_title = "Сила в людях"
+    blocks = driver.find_elements(By.CSS_SELECTOR, '.s-Grid-col--sm12')
+    news_block = blocks[2]
+    assert block_title in news_block.text, 'Нет такого заголовка'
+    close_banner = driver.find_element(By.CSS_SELECTOR, '.tensor_ru-CookieAgreement__close')
+    close_banner.click()
     about_btn = driver.find_element(By.CSS_SELECTOR, '.tensor_ru-Index__card-text [href="/about"]')
     about_btn.click()
     driver.switch_to.window(driver.window_handles[1])
-    sleep(5)
+    sleep(2)
     assert driver.current_url == 'https://tensor.ru/about'
 finally:
     driver.quit()
